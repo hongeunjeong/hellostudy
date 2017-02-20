@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tabmenu / Accordion</title>
+	<link rel="stylesheet" href="../../../css/reset.css" />
+	<script src="../../../js/jquery.js"></script>
+	<style>
+		/* accordion */
+		.accordion_wrap {width:500px; margin:30px auto; text-align:center;}
+		.accordion a {display:inline-block; width:100%; line-height:40px; color:#fff;}
+		.accordion .orange {background:orange;}
+		.accordion .gray {background:#666;}
+		.accordion .box {display:none; height:200px; padding:10px; border:1px solid #ccc;}
+		.accordion li.on .box {display:block;}
+	</style>
+</head>
+<body>
+	<div class="wrap">	
+		<div class="accordion_wrap">
+			<ul class="accordion">
+				<li>
+					<a href="#" class="orange">Title01</a>
+					<div class="box">content01</div>
+				</li>
+				<li>
+					<a href="#" class="gray">Title02</a>
+					<div class="box">content02</div>
+				</li>
+				<li>
+					<a href="#" class="orange">Title03</a>
+					<div class="box">content03</div>
+				</li>
+				<li>
+					<a href="#" class="gray">Title04</a>
+					<div class="box">content04</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$(".accordion a").on("click",function(){
+				var item=$(this).closest("li");
+				if($(item).hasClass("on")){
+					$(item).removeClass("on");
+				}else {
+					$(".accordion li").removeClass("on");
+					$(item).addClass("on");
+				};
+			});
+		});
+	</script>
+</body>
+</html>

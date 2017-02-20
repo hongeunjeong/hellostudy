@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../../../css/reset.css" />
+	<script src="../../../js/jquery.js"></script>
+    <style>
+        .wrap {width:600px; margin:20px auto; border:1px solid #dedede;}
+        .box {padding:20px 10px; border-bottom:1px solid #dedede;}
+        .box span {display:block; margin-bottom:10px; font-weight:bold; color:#666; font-weight:normal;}
+        h2 {margin-bottom:10px; font-size:16px; color:#000;}
+        button {margin-left:10px; padding:5px 10px; background:#eee; border:1px solid #000; color:#444; font-weight:bold;}
+        input {width:150px; padding:5px 10px; box-sizing:border-box;}
+		
+        .inputBox {position:relative; width:200px;}
+        .inputBox input {width:150px; margin-bottom:10px;  padding:5px 10px}
+        .inputSpan {display:block; position:absolute; top:0; left:0; width:100%; height:100%; padding:5px 10px; box-sizing:border-box; font-size:12px;}
+        .btnColorBox_1.on {background:#fff; color:red;}
+        .btnColorBox_2.on {background:red; color:blue;}
+		.animationBox {width:100px; height:100px; background:orange;}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box btnWrap">
+            <h2>[문제 1]<span>화면에 버튼 2개를 보여주고 버튼을 클릭하면 문자 색과 배경색을 바꾸는 스크립트를 만드시오.</span></h2>
+            <span>[버튼1] 문자 색을 Red로 배경색을 흰색으로<br>
+                [버튼2] 문자 색을 Blue로 배경색을 Red로<br>
+            </span>
+            <button class="btnColorBox_1">Button01</button>
+            <button class="btnColorBox_2">Button02</button>
+        </div>
+        <!-- //문제1 -->
+
+        <div class="box point">
+            <h2>[문제 2]<span>국어,수학,영어,과학 점수별 성적을 입력하고 평균을 구해 그 평균에 따른 등급을 출력하는 코드를 작성하시오.(반올림 : Math.Ceil)</span></h2>
+            <span>평균 점수 : 60점 미만 F , 60점 이상 D, 70점 이상 C, 80점 이상 B, 90점 이상 A</span>
+            <div>
+                <span style="display:inline-block; margin-right:10px;">국어:</span><input type="text" class="subject01" />
+            </div>
+            <div>
+                <span style="display:inline-block; margin-right:10px;">수학:</span><input type="text" class="subject02" />
+            </div>
+            <div>
+                <span style="display:inline-block; margin-right:10px;">영어:</span><input type="text" class="subject03" />
+            </div>
+            <div>
+                <span style="display:inline-block; margin-right:10px;">과학:</span><input type="text" class="subject04" />
+            </div>
+            <button class="btnSubject" style="margin-left:10px;">Click</button>
+        </div>
+        <!-- //문제2 -->
+
+        <div class="box">
+            <h2>[문제 3]<span>placeholder 기능을 구현하시오.</span></h2>
+            <div class="inputBox">
+                <input type="text" id="input" class="placeholder">
+                <span for="input" class="inputSpan">검색어를 입력하세요</span>
+            </div>            
+        </div>
+        <!-- //문제3 -->
+
+        <div class="box">
+            <h2>[문제 4]<span>배열에 자신이 좋아하는 것과 싫어하는 것을 담고 좋아하는것을 입력했을때와 싫어하는 것을 입력했을때
+                alert창을 띄우시오.</span></h2>
+            <span>좋아하는것 : 사과, 바나나, 수박</span>
+            <span>싫어하는것 : 콩, 아메리카노, 시금치</span>
+            <input type="text" id="input_2" class="arrTxt">
+            <button class="btnArr">Click</button>         
+        </div>
+        <!-- //문제4 -->
+
+        <div class="box">
+            <h2>[문제 5]<span>for문을 사용하여 i의 값이 20을 시작으로 3씩 감소하여 0보다 클때만 반복하는 반복문을 만들어 i의 값을 document에 출력해 주세요.</span></h2>
+            <div class="document"></div>           
+        </div>
+        <!-- //문제5 -->
+
+        <div class="box">
+            <h2>[문제 6]<span>1+2+3+ ..... + 100 의 짝수의 합을 구하시오.</span></h2>       
+            <button class="sum">Click</button>    
+        </div>
+        <!-- //문제6 -->
+
+        <div class="box tableWrap">
+            <h2>[문제 7]<span>사용자로부터 입력받은 수로 table(행과 열 개수)을 만드시오.</span></h2>
+            <span>row : </span><input type="text" class="row">
+			<span>col : </span><input type="text" class="col">   
+			<button class="btnTable">Click</button> 
+        </div>
+        <!-- //문제7 -->
+
+        <div class="box">
+            <h2>[문제 8]<span>어떠한 박스가 있다. 그 박스를 클릭하면 크기가 변하는 애니메이션을 만드시오.(animate)</span></h2>
+            <div class="animationBox"></div>           
+        </div>
+        <!-- //문제8 -->
+        
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        //문제1
+        $('.btnWrap button').on('click',function(){
+            $(this).addClass('on').siblings().removeClass('on');
+        });
+        
+        //문제2
+        $('.btnSubject').on('click',function(){
+            var subject01 = Number($('.subject01').val());
+            var subject02 = Number($('.subject02').val());
+            var subject03 = Number($('.subject03').val());
+            var subject04 = Number($('.subject04').val());
+            var sumSubject = subject01 + subject02 + subject03 + subject04;
+            var avg = Math.ceil(sumSubject/4);
+            var point = $('.point input').val();
+            
+            if(point.length){
+                if(avg>=90 && avg<=100){
+                    alert('A등급');
+                }else if(avg>=80 && avg<90){
+                    alert('B등급');
+                }else if(avg>=70 && avg<80){
+                    alert('C등급');
+                }else if(avg>=60 && avg<70){
+                    alert('D등급');
+                }else if(avg>=0 && avg<60){
+                    alert('F등급');
+                }else {
+                    alert('점수를 다시 입력하세요');
+                }
+            }else{
+                alert('점수를 입력해 주세요');
+            }
+        });
+        
+        //문제3
+        $('.inputSpan').on('click',function(){
+            $(this).hide();
+            $('.placeholder').focus();
+        });
+        
+        $('.placeholder').on('blur',function(){
+            if($(this).val().length==false){
+                $('.inputSpan').show(200);
+            }
+        });
+        
+        //문제4
+        $('.btnArr').on('click',function(){
+            var like = ['사과', '바나나', '수박'];
+            var dislike = ['콩', '아메리카노', '시금치'];
+            
+            for(i=0; i<like.length; i++){
+                if($('.arrTxt').val()==like[i]){
+                    alert('내가 좋아하는거~~');
+                }
+                
+            }
+            for(j=0; j<dislike.length; j++){
+                if($('.arrTxt').val()==dislike[j]){
+                    alert('내가 싫어하는거~~');
+                }
+
+            }
+        });
+        
+        //문제5
+        for(i=20; i>0; i-=3){
+            $('.document').append(i + " ");
+        };
+
+        //문제6
+        $('.sum').on('click',function(){
+            var sum=0;
+            for(i=1; i<=100; i++){
+                if(i%2==0){
+                    sum=sum+i; 
+                }
+            }
+            alert('1부터 100까지 짝수의 합은 ' + sum + ' 이다.');
+        });
+        
+        //문제7
+        $('.btnTable').on('click',function(){
+			var row = Number($('.row').val());
+			var col = Number($('.col').val());
+			var table = "";
+
+			table += "<table>";
+			for(var i=0; i<row; i++){
+				table += "<tr>";
+				for(var j=0; j<col; j++){
+					table += "<td>O";
+				}
+				table += "</td>";
+			}
+			table += "</tr></table>";
+
+			$(".tableWrap").append(table);
+		});
+        
+        //문제8
+        $('.animationBox').on('click',function(){
+            if($(this).width()==100){
+                $(this).animate({width:'400px'},200);
+            }else{
+                $(this).animate({width:'100px'},200);
+            }
+        });   
+    });
+    
+</script>
+
+</html>

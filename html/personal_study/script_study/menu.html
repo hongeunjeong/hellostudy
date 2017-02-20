@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="../../../css/reset.css" />
+	<script src="../../../js/jquery.js"></script>
+	<style type="text/css">
+	a {display:inline-block; width:100%; border-bottom:1px solid #d0d0d0; text-decoration:none; text-align:center; color:#666; line-height:30px}
+	.topmenu {width:600px; margin:0 auto}
+	.topmenu>li>a {background:purple; color:#fff}
+	.topmenu:after {display:block; clear:both; content:""}
+	.topmenu>li {float:left; width:25%; border-right:1px solid #d0d0d0; box-sizing:border-box}
+	.topmenu .top_li_last{border-right:0}
+	.submenu {display:none; border:1px solid #d0d0d0; border-right:0;}
+	.top_li_last .submenu {border-right:1px solid #d0d0d0;}
+	.submenu .sub_li_last a {border-bottom:0}
+	.submenu a:hover {font-weight:bold}	
+	</style>
+</head>
+
+<body>
+	<div class="menubox">
+	  <ul class="topmenu">
+		  <li><a href="#">Menu01</a>
+			  <ul class="submenu">
+				  <li><a href="#">menu01-1</a></li>
+				  <li><a href="#">menu01-2</a></li>
+				  <li><a href="#">menu01-3</a></li>
+				  <li class="sub_li_last"><a href="#">menu01-4</a></li>
+			  </ul>
+		  </li>
+		<li><a href="#">Menu02</a>
+			  <ul class="submenu">
+				  <li><a href="#">menu02-1</a></li>
+				  <li><a href="#">menu02-2</a></li>
+				  <li><a href="#">menu02-3</a></li>
+				  <li class="sub_li_last"><a href="#">menu02-4</a></li>
+			  </ul>
+		  </li>
+		  <li><a href="#">Menu03</a>
+			  <ul class="submenu">
+				  <li><a href="#">menu03-1</a></li>
+				  <li><a href="#">menu03-2</a></li>
+				  <li><a href="#">menu03-3</a></li>
+				  <li class="sub_li_last"><a href="#">menu03-4</a></li>
+			  </ul>
+		  </li>
+		 <li class="top_li_last"><a href="#">Menu04</a>
+			  <ul class="submenu">
+				  <li><a href="#">menu04-1</a></li>
+				  <li><a href="#">menu04-2</a></li>
+				  <li><a href="#">menu04-3</a></li>
+				  <li class="sub_li_last"><a href="#">menu04-4</a></li>
+			  </ul>
+		  </li>
+	  </ul>
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(function(){
+		$(".topmenu>li").on("mouseenter",function(){ //li마우스오버
+		  $(this).find(".submenu").show(); //투뎁스 display:block
+		});
+
+		$(".topmenu>li").on("mouseleave",function(){ //li마우스아웃
+		  $(this).find(".submenu").hide(); //투뎁스 display:none
+		});
+	})
+</script>
+</html>

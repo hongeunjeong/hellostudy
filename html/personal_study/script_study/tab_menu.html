@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../../../css/reset.css" />
+	<script src="../../../js/jquery.js"></script>
+    <style>
+        .tab-wrap {padding:20px;}
+        .tab-cont-wrap:after {display:block; content:""; clear:both}
+        .tab-cont {display:none; padding:20px 0;}
+        .tab-cont:first-child {display:block}
+        .tab {border-bottom:2px solid #666;}
+        
+        .tab ul:after {display:block; clear:both; content:"";}
+        .tab ul li {float:left;  min-width:182px;}
+        .tab ul li:first-child a {border-left:1px solid #dbdbdb;}
+        .tab ul li a {display:block; height:44px; padding:0 10px; line-height:44px; text-align:center; text-decoration:none; font-size:18px; letter-spacing:-1px; border:1px solid #dbdbdb; border-left:none; border-bottom:2px solid #fff; color:#666;}
+        .tab ul li.active a {margin-left:-1px; margin-top:-2px; height:47px; line-height:46px; border:2px solid #888; border-bottom-color:#fff; color:#000;}
+    </style>
+</head>
+<body>
+    <div class="tab-wrap">
+        <div class="tab">
+            <ul>
+                <li class="active"><a href="#">제품특징</a></li>
+                <li><a href="javascript:;">구매후기</a></li>
+                <li><a href="javascript:;">전문상담</a></li>
+                <li><a href="javascript:;">구매절차 / 유의사항</a></li>
+            </ul>
+        </div>
+        <div class="tab-cont-wrap">
+            <div class="tab-cont">컨텐츠1</div>
+            <div class="tab-cont">컨텐츠2</div>
+            <div class="tab-cont">컨텐츠3</div>
+            <div class="tab-cont">컨텐츠4</div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+	$(function(){
+		$('.tab li').on('click', function(e){
+			var tabIdx = $(this).index();      
+			$(this).addClass('active').siblings().removeClass('active');
+			$(this).closest('.tab-wrap').find('.tab-cont').hide().eq(tabIdx).show();
+		})
+	});
+</script>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../../../css/reset.css" />
+	<script src="../../../js/jquery.js"></script>
+    <style>
+        .boxWrap {width:600px; margin:20px auto; border:1px solid #dedede;}
+        .box {padding:20px 10px; border-bottom:1px solid #dedede;}
+        .box span {display:block; margin-bottom:10px; font-weight:bold; color:#666; font-weight:normal;}
+        h2 {margin-bottom:10px; font-size:16px; color:#000;}
+        button {margin-left:10px; padding:5px 10px; background:#eee; border:1px solid #000; color:#444; font-weight:bold;}
+        input {width:150px; margin-bottom:10px; padding:5px 10px; box-sizing:border-box;}
+        .colorBox {width:200px; height:150px; margin-bottom:10px; border:1px solid #dedede;}
+
+        /* menubox */
+        .menubox {height:150px;}
+        .menubox a {display:block; border-bottom:1px solid #dedede; text-decoration:none; text-align:center; color:#666; line-height:28px;}
+        .topmenu {width:100%;}
+        .topmenu:after {display:inline-block; clear:both; content:"";}
+        .topmenu>li {float:left; width:25%;  box-sizing:border-box;}
+        .topmenu>li>a {background:orange; border-right:1px solid #d0d0d0;color:#fff;}
+        .topmenu .top_li_last{border-right:0;}
+        .submenu {display:none; border:1px solid #d0d0d0;}
+        .submenu .sub_li_last a {border-bottom:0;}
+        .submenu a:hover {font-weight:bold;}
+
+        /* popup */
+        .btnBox {display:inline-block; width:100px; background:purple; line-height:50px; color:#fff; text-decoration:none; font-weight:bold; text-align:center;}
+        .popupContWrap {display:none; width:100%; height:100%; z-index:9999;}
+        .dim {position:fixed; top:0; left:0; right:0; bottom:0; background:#000; opacity:0.7;}
+        .popupCont {position:fixed; top:50%; left:50%; width:300px; height:200px; padding:25px 20px 20px; margin:-120px 0 0 -170px; background:#fff;}
+        .popupCont p {height:100%; margin:0; overflow-y:auto; word-break:break-all; font-size:13px; text-align:left}
+        .popupCont .btnClose {position:absolute; top:5px; right:10px; font-size:12px; color:#666}    
+    </style>   
+</head>
+
+<body>
+    <div class="boxWrap">
+        <div class="box">
+            <h2>[문제 1]<span>버튼을 클릭하면 alert('hiweb')을 띄우시오.</span></h2>
+            <button class="btnClick_1">Click</button>
+        </div>
+        <!-- //문제1 -->
+        <div class="box">
+            <h2>[문제 2]<span>수학점수를 입력하여 버튼을 클릭 시 몇등급이 나오는지 alert창을 띄우시오.</span></h2> 수학 :
+            <input type="text" class="point" />
+            <button class="btnClick_2" style="margin-left:10px;">Click</button>
+        </div>
+        <!-- //문제2 -->
+        <div class="box colorBoxWrap">
+            <h2>[문제 3]<span>사과, 바나나, 포도 버튼을 클릭 시 해당 .colorBox에 색을 채우시오.</span></h2>
+            <div class="colorBox"></div>
+            <button class="color01">사과</button>
+            <button class="color02">바나나</button>
+            <button class="color03">포도</button>
+        </div>
+        <!-- //문제3 -->
+        <div class="box">
+            <h2>[문제 4]<span>로그인 input에 공란이 있을 경우 "아이디를 입력해주세요"라는 alert창을 띄우시오.</span></h2>
+            <div class="login">
+                <input type="text" class="loginInput" />
+                <button class="btnEnter">확인</button>
+            </div>
+        </div>
+        <!-- //문제4 -->
+        <div class="box">
+            <h2>[문제 5]<span>id와 pw가 없는 경우와 둘 중에 하나가 없는 경우 alert창을 띄우시오. (id가 없을 경우 "아이디를 입력해주세요" 형식으로)</span></h2>
+            <div class="exp">
+                아이디 :
+                <input type="text" class="login1" />
+                비빌번호 :
+                <input type="password" class="pw" />
+                <button class="enter">확인</button>
+            </div>
+        </div>
+        <!-- //문제5 -->
+        <div class="box">
+            <h2>[문제 6]<span>'hiweb' 이라는 클래스가 있을 경우에만 이벤트가 실행하도록 만드시오.</span></h2>
+            <div class="exp">
+                <button class="Go">Go</button>
+            </div>
+        </div>
+        <!-- //문제6 -->
+        <div class="box">
+            <h2>[문제 7]<span>아래 변수 arr에 배열이 있습니다. 중간에 숫자 5가 들어간 배열의 원소를 순서에 맞게 2로 변경해 주세요.</span></h2> var arr1 = {0,1,5,3,4}
+            <button class="alertLink_1">확인</button>
+        </div>
+        <!-- //문제7 -->
+        <div class="box">
+            <h2>[문제 8]<span>배열 arr2의 갯수 값을 alert로 출력해보세요.</span></h2> var arr2 = {0,1,5,3,4}
+            <button class="alertLink_2">확인</button>
+        </div>
+        <!-- //문제8 -->
+        <div class="box">
+            <h2>[문제 9]<span>아래 배열과 반복문을 이용해서 특정 문자가 입력 됬을 때 경고창을 띄어주세요.</span></h2> var arr3= {"a" , "b" , "c" , "d" , "e"}
+            <input type="text" class="arrayTxt" />
+            <button class="btnArray">확인</button>
+        </div>
+        <!-- //문제9 -->
+        <div class="box">
+            <h2>[문제 10]<span>아래 배열과 반복문을 이용해서 문자출력하시오.</span></h2> var arr4 = {0,1,5,3,4}
+            <button class="btnArray_2">확인</button>
+        </div>
+        <!-- //문제10 -->
+        <div class="box">
+            <h2>[문제 11]<span>메뉴를 hover하였을 때 각각의 하위 메뉴들이 나타나게 만드시오.</span></h2>
+            <div class="menubox">
+                <ul class="topmenu">
+                    <li><a href="#">Menu01</a>
+                        <ul class="submenu">
+                            <li><a href="#">menu01-1</a></li>
+                            <li><a href="#">menu01-2</a></li>
+                            <li><a href="#">menu01-3</a></li>
+                            <li class="sub_li_last"><a href="#">menu01-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Menu02</a>
+                        <ul class="submenu">
+                            <li><a href="#">menu02-1</a></li>
+                            <li><a href="#">menu02-2</a></li>
+                            <li><a href="#">menu02-3</a></li>
+                            <li class="sub_li_last"><a href="#">menu02-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Menu03</a>
+                        <ul class="submenu">
+                            <li><a href="#">menu03-1</a></li>
+                            <li><a href="#">menu03-2</a></li>
+                            <li><a href="#">menu03-3</a></li>
+                            <li class="sub_li_last"><a href="#">menu03-4</a></li>
+                        </ul>
+                    </li>
+                    <li class="top_li_last"><a href="#">Menu04</a>
+                        <ul class="submenu">
+                            <li><a href="#">menu04-1</a></li>
+                            <li><a href="#">menu04-2</a></li>
+                            <li><a href="#">menu04-3</a></li>
+                            <li class="sub_li_last"><a href="#">menu04-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- //menubox -->
+        </div>
+        <!-- //문제11 -->
+        <div class="box">
+            <h2>[문제 12]<span>버튼을 클릭 시 레이어 팝업이 띄게 만드시오.</span></h2>
+            <div class="popupWrap">
+                <button class="btnPopup">확인</button>
+                <div class="popupContWrap">
+                    
+                    <div class="popupCont">
+                        <p>popup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_cont</p>
+                        <a href="#" class="btnClose">close</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //popupWrap -->
+        </div>
+        <!-- //문제12 -->
+        <div class="box">
+            <h2>[문제 13]<span>input 클릭시 label문구 사라지게끔 만드시오.</span></h2>
+            <div class="inputBox">
+                <input type="text" id="input" class="placeholder">
+                <span for="input" class="inputSpan">검색어를 입력하세요</span>
+            </div>
+        </div>
+        <!-- //문제13 -->
+        <div class="box">
+            <h2>[문제 14]<span>p태그를 찾아서 클릭했을때 해당 p태그에 animation효과를 적용하시오.(예를들면 높이를 늘린다거나, 너비를 늘린다거나..)</span></h2>
+            <div class="animationWrap">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+            </div>
+        </div>
+        <!-- //문제14 -->
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        //문제1
+		$('.btnClick_1').on('click', function() {
+			alert('hiweb');
+		});
+
+		//문제2       
+		$('.btnClick_2').on('click', function() {
+			var point = $('.point').val();
+			if(point.length){
+				if (point >= 90 && point <= 100) {
+					alert('1등급');
+				} else if (point >= 80 && point < 90) {
+					alert('2등급');
+				} else if (point >= 70 && point < 80) {
+					alert('3등급');
+				} else if (point >= 60 && point < 70) {
+					alert('4등급');
+				} else if (point >= 0 && point < 60) {
+					alert('5등급');
+				} else {
+					alert('점수를 다시 입력하세요');
+				}
+			}else{
+				alert('점수를 입력해 주세요');
+			}     
+		});
+
+		//문제3
+		
+		
+		$('.colorBoxWrap button').on('click', function() { 
+			var colorBtn =  $(this);
+			var colorBox = $('.colorBox');
+			if (colorBtn.hasClass('color01')) {
+				colorBox.css('background', 'red');
+			} else if (colorBtn.hasClass('color02')) {
+				colorBox.css('background', 'yellow');
+			} else if (colorBtn.hasClass('color03')) {
+				colorBox.css('background', 'purple');
+			}
+		});
+
+		//문제4
+		$('.btnEnter').on('click', function() {
+			var loginInput = $('.loginInput').val()
+			if (loginInput.length == false) {
+				alert('아이디를 입력해주세요');
+			}
+
+		});
+		
+		//문제5
+		$('.enter').on('click',function(){
+			var loginId = $('.login1').val();
+			var loginPw = $('.pw').val();
+			if(loginId.length == false && loginPw.length == false){
+				alert('아이디와 비밀번호 입력하세요');
+			}else if (loginId.length == false){
+				alert('아이디를 입력하세요');
+			}else if (loginPw.length == false){
+				alert('비밀번호를 입력하세요');
+			}
+		});
+		
+		//문제6
+		$('.Go').on('click',function(){
+			if($(this).hasClass('hiweb')){
+				alert('클래스잇음');
+			}
+			
+		});
+		
+		//문제7
+		$('.alertLink_1').on('click',function(){
+			var arr1 = [0,1,5,3,4];
+			arr1[2]=2;
+			alert(arr1[2]);
+		});
+		
+		//문제8
+		$('.alertLink_2').on('click',function(){
+			var arr2 = [0,1,5,3,4];
+			var arrLength = arr2.length;
+			alert(arrLength);
+		});
+		
+		//문제9
+		$('.btnArray').on('click',function(){
+			var arr3= ['a' , 'b' , 'c' , 'd' , 'e'];
+			for(var i=0; i<arr3.length; i++){
+				if($('.txt').val() == arr3[i]){
+					alert('경고!!!');
+				}
+			}
+		});
+		
+		//문제10
+		$('.btnArray_2').on('click',function(){
+			var arr4 = [0,1,5,3,4];
+			for(i=0;i<arr4.length;i++){
+				document.write(arr4[i]);
+			}
+		});
+		
+		//문제11
+		$('.topmenu > li').on('mouseenter',function(){
+		  $(this).find('ul').show();        
+		});
+		
+		$('.topmenu > li').on('mouseleave',function(){
+		  $(this).find('ul').hide();        
+		});
+		
+		//문제12
+		$('.btnPopup').on('click',function(){
+			$('.popupContWrap').show(300);
+		});
+		$('body').on('click',function(){
+			$('.popupContWrap').hide(300);
+		});
+		
+		//문제13
+		$('.inputSpan').on('click',function(){
+			$('.placeholder').focus();
+			$(this).hide();
+		});
+
+		$('.placeholder').on('blur',function(){
+            if($(this).val().length==false){
+                $('.inputSpan').show(200);
+            }
+		});
+    })
+
+</script>
+
+</html>

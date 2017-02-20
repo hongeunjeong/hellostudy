@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layer popup</title>
+	<link rel="stylesheet" href="../../../css/reset.css" />
+	<script src="../../../js/jquery.js"></script>
+	<style>
+		.wrap {margin:0; padding:0; text-align:center;}
+		.btn_box {display:inline-block; width:100px; background:purple; line-height:50px; color:#fff; text-decoration:none; font-weight:bold; text-align:center;}
+		.popup_wrap {display:none; width:100%; height:100%; z-index:9999;}
+		.popup_wrap .dim {position:fixed; top:0; left:0; right:0; bottom:0 ; background:#000; opacity:0.7; filter:alpha(opacity:'70');}
+		.popup_cont {position:fixed; top:50%; left:50%; width:300px; height:200px; padding:25px 20px 20px; margin:-120px 0 0 -170px; background:#fff;}
+		.popup_cont p {height:100%; margin:0; overflow-y:auto; word-break:break-all; text-align:left; color:#666; font-size:13px;}
+		.popup_cont .btn_close {position:absolute; top:5px; right:10px; color:#666; font-size:12px;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<a href="#" class="btn_box">click</a>
+		<div class="popup_wrap">
+			<div class="dim"></div>
+			<div class="popup_cont">
+				<p>popup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_contpopup_cont</p>
+				<a href="#" class="btn_close">close</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$(".btn_box").on("click",function(){
+				$(".popup_wrap").show(300);
+				$("body").css("overflow","hidden");
+			});
+			$(".btn_close").on("click",function(){
+				$(".popup_wrap").hide(300);
+			});
+		});
+	</script>
+</body>
+</html>

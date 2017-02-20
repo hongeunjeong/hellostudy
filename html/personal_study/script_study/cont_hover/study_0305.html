@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" href="../../../../css/reset.css" />
+		<script src="../../../../js/jquery.js"></script>
+        <style>
+            .cont_box {width:650px; margin:0 auto;}
+            .cont_box li {width:100%; height:250px;}
+            .cont_box li:after {display:block; clear:both; content:"";}
+            .cont_left {float:left; width:50%; height:100%;}
+            .cont_right {float:right; width:50%; height:100%;}
+            .link_box a {position:relative; display:block; width:100%; height:100%;}
+            .link_box a > div {position:absolute; top:50%; left:50%; margin-top:-27px; margin-left:-150px; text-align:center;}
+            .link_box strong {display:block; margin-bottom:10px; color:#222; font-size:18px;}
+            .link_box span {display:block; color:#888; font-size:11px;}
+            .img_box img {width:100%; height:100%;}
+            .effect_box {display:none;}
+            
+            /* 01. css + 스크립트로 제어 */
+            .link_box.active .basic_box {display:none;}
+            .link_box.active .effect_box {display:block;}
+            .link_box.active {background:#fed53e;}
+            
+            /* 02. 스크립트로만 제어*/
+
+            /* 03. css로만 제어 
+            .link_box:hover .basic_box {display:none;}
+            .link_box:hover .effect_box {display:block;}
+            .link_box:hover {background:#fed53e;}*/
+        </style>
+    </head>
+
+    <body>
+        <div class="content_wrap">
+            <ul class="cont_box">
+                <li>
+                    <div class="link_box cont_left">
+                        <a href="#">
+                            <div class="basic_box">
+                                <strong class="basic_tit">Better Food</strong>
+                                <span>GOOD FOOD FOR HEALTH IS ALSO GOOD FOR THE SKIN<br>Food Cosmetics. SKINFOOD</span>
+                            </div>
+                            <div class="effect_box">
+                                <strong class="effect_tit">BRAND</strong>
+                                <span>GOOD FOOD FOR HEALTH IS ALSO GOOD FOR THE SKIN<br>Food Cosmetics. SKINFOOD</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img_box cont_right">
+                        <img src="images/img_skin01.jpg" alt="SKINFOOD_IMG01">
+                    </div>
+                </li>
+                <!--//cont_box-->
+                <li>
+                    <div class="link_box cont_right">
+                        <a href="#">
+                            <div class="basic_box">
+                                <strong class="basic_tit">Better Beauty</strong>
+                                <span>GOOD FOOD FOR HEALTH IS ALSO GOOD FOR THE SKIN<br>Food Cosmetics. SKINFOOD</span>
+                            </div>
+                            <div class="effect_box">
+                                <strong class="effect_tit">EVENT</strong>
+                                <span>GOOD FOOD FOR HEALTH IS ALSO GOOD FOR THE SKIN<br>Food Cosmetics. SKINFOOD</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img_box cont_left">
+                        <img src="images/img_skin02.jpg" alt="SKINFOOD_IMG02">
+                    </div>
+                </li>
+                <!--//cont_box-->
+                <li>
+                    <div class="link_box cont_left">
+                        <a href="#">
+                            <div class="basic_box">
+                                <strong class="basic_tit">Better Healthy</strong>
+                                <span>GOOD FOOD FOR HEALTH IS ALSO GOOD FOR THE SKIN<br>Food Cosmetics. SKINFOOD</span>
+                            </div>
+                            <div class="effect_box">
+                                <strong class="effect_tit">COMMUNITY</strong>
+                                <span>GOOD FOOD FOR HEALTH IS ALSO GOOD FOR THE SKIN<br>Food Cosmetics. SKINFOOD</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img_box cont_right">
+                        <img src="images/img_skin03.jpg" alt="SKINFOOD_IMG03">
+                    </div>
+                </li>
+                <!--//cont_box-->
+            </ul>
+        </div>
+        <!--//content_wrap-->
+    </body>
+    
+    <script>
+    /* 01. 스크립트 + css 로 제어 */
+    $(function(){
+        var hover_box = $('.link_box');
+        hover_box.on('mouseenter',function(){
+            $(this).addClass('active');
+        });
+        hover_box.on('mouseleave',function(){
+            $(this).removeClass('active');
+        });
+        
+    });
+        
+    /* 02. 스크립트로만 제어 
+    $(function(){
+         var hover_box = $('.link_box a');
+         hover_box.on('mouseenter',function(){
+             $(this).addClass('active').children('.basic_box').css('display','none').siblings().css('display','block');
+             $(this).css('background','#fed53e');
+         });
+
+         hover_box.on('mouseleave',function(){
+             $(this).removeClass('active').children('.basic_box').css('display','block').siblings().css('display','none');
+             $(this).css('background','#fff');
+         });
+
+     })
+     */
+    </script>
+    
+</html>
