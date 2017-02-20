@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../../../css/style.css" />
+	<link rel="stylesheet" href="../../../../css/reset.css" />
+	<script type="text/javascript" src="../../../../js/jquery.js"></script>
+	<style type="text/css">
+		.emoticon_box {position:relative; width:400px; margin:50px auto;}
+		.view_box {display:inline-block; border:1px solid #666; width:80px; height:80px;}
+		.view_box a {display:block; height:100%; text-align:center;}
+		.view_box img {display:inline-block; padding:16px 0; text-align:center; vertical-align:middle;}
+		.emoticon_list {display:none; position:absolute; top:0; left:81px; border:1px solid #666;}
+		.emoticon_list ul {width:420px;}
+		.emoticon_list ul:after {content:""; display:block; clear:both;}
+		.emoticon_list li {float:left; width:80px; height:80px;}
+		.emoticon_list a {display:block; height:100%; text-indent:-9999px;}
+		.emoticon1 {background:url('images/ico_emoticon1.png') no-repeat 50%;}
+		.emoticon2 {background:url('images/ico_emoticon2.png') no-repeat 50%;}
+		.emoticon3 {background:url('images/ico_emoticon3.png') no-repeat 50%;}
+		.emoticon4 {background:url('images/ico_emoticon4.png') no-repeat 50%;}
+		.emoticon5 {background:url('images/ico_emoticon5.png') no-repeat 50%;}
+		.emoticon6 {background:url('images/ico_emoticon6.png') no-repeat 50%;}
+		.emoticon7 {background:url('images/ico_emoticon7.png') no-repeat 50%;}
+		.emoticon8 {background:url('images/ico_emoticon8.png') no-repeat 50%;}
+		.emoticon9 {background:url('images/ico_emoticon9.png') no-repeat 50%;}
+		.emoticon10 {background:url('images/ico_emoticon10.png') no-repeat 50%;}
+		.btn_close {position:absolute; top:5px; right:5px; background:url('images/btn_close.png') no-repeat 50%; }
+	</style>
+</head>
+<body>
+	<div id="wrap">
+
+		<!-- 이모티콘 bg인 경우 -->
+		<!-- <div class="emoticon_box">
+			<div class="view_box emoticon1">
+				<a href="#">emoticon</a>
+			</div>
+			<div class="emoticon_list">
+				<ul>
+					<li class="emoticon1"><a href="#">emoticon01</a></li>
+					<li class="emoticon2"><a href="#">emoticon02</a></li>
+					<li class="emoticon3"><a href="#">emoticon03</a></li>
+					<li class="emoticon4"><a href="#">emoticon04</a></li>
+					<li class="emoticon5"><a href="#">emoticon05</a></li>
+					<li class="emoticon6"><a href="#">emoticon06</a></li>
+					<li class="emoticon7"><a href="#">emoticon07</a></li>
+					<li class="emoticon8"><a href="#">emoticon08</a></li>
+					<li class="emoticon9"><a href="#">emoticon09</a></li>
+					<li class="emoticon10"><a href="#">emoticon10</a></li>
+				</ul>
+				<div class="btn_close">
+					<a href="#">닫기버튼</a>
+				</div>
+			</div>
+		</div> -->
+		<!-- //이모티콘 bg인 경우 -->
+
+		<!-- 이모티콘 img인 경우 -->
+		<div class="emoticon_box">
+			<div class="view_box">
+				<a href="#"><img src="images/ico_emoticon1.png" alt="" /></a>
+			</div>
+			<div class="emoticon_list">
+				<ul>
+					<li class="emoticon1"><a href="#">emoticon01</a></li>
+					<li class="emoticon2"><a href="#">emoticon02</a></li>
+					<li class="emoticon3"><a href="#">emoticon03</a></li>
+					<li class="emoticon4"><a href="#">emoticon04</a></li>
+					<li class="emoticon5"><a href="#">emoticon05</a></li>
+					<li class="emoticon6"><a href="#">emoticon06</a></li>
+					<li class="emoticon7"><a href="#">emoticon07</a></li>
+					<li class="emoticon8"><a href="#">emoticon08</a></li>
+					<li class="emoticon9"><a href="#">emoticon09</a></li>
+					<li class="emoticon10"><a href="#">emoticon10</a></li>
+				</ul>
+				<div class="btn_close">
+					<a href="#">닫기버튼</a>
+				</div>
+			</div>
+		</div>
+		<!-- //이모티콘 img인 경우 -->
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(function(){
+		$('.view_box a').on('click',function(){
+			$('.emoticon_list').show();
+		})
+		
+		/*이모티콘 bg인 경우 */
+		/* $('.emoticon_list li a').on('click',function(){
+			var currentIdx = $(this).parent().index();
+			var emoticonNum = currentIdx + 1;
+			$('.view_box').attr('class','view_box').addClass('emoticon' + emoticonNum);
+			$('.emoticon_list').hide();
+		}) */
+		
+		/*이모티콘 img인경우*/
+		 $('.emoticon_list li a').on('click',function(){
+			var currentIdx = $(this).parent().index();
+			var emoticonNum = currentIdx + 1;
+			
+			$('.view_box img').attr({'src':'images/ico_emoticon'+emoticonNum+'.png'});
+			$('.emoticon_list').hide();
+		})
+
+
+		$('.btn_close').on('click',function(){
+			$('.emoticon_list').hide();
+		})
+	})
+</script>
+</html>

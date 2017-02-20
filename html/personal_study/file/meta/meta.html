@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>META태그</title>
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/bootstrap.css" />
+	<link rel="stylesheet" href="../../css/basic_form.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+	<style type="text/css">
+		.container {width:960px; padding:30px 0; margin:0 auto;}
+		.container h2 {margin-bottom:20px; font-size:18px;}
+		.sec_box {display:none;}
+		.cont + .cont {margin-top:20px;}
+		.table p {margin-left:64px; text-indent:-64px;}
+		.table tr:nth-child(2n) td {background:#f5f5f5;}
+		.table tbody tr:hover td, .table tbody tr:hover th {background:none;}
+		.table tbody tr:nth-child(2n):hover td, .table tbody tr:nth-child(2n):hover th {background:#f5f5f5;}
+		.btn_top {display:none; position:fixed; right:0; bottom:0; width:50px; height:50px; line-height:50px; background:#434a54; color:#fff; font-size:18px; text-align:center;}
+	</style>
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<div class="header">
+			<div class="header_inner">
+				<h1>META 태그 정리</h1>
+				<div class="gnb">
+					<ul>
+						<li class="on"><a href="#">Web</a></li>
+						<li><a href="#">Mobile&amp;Responsive</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="tab_wrap">
+				<div class="sec_box" style="display:block;">
+					<h2>1. WEB</h2>
+					<table class="table table-bordered table-hover table-condensed">
+						<caption>대인덱스 목록</caption>
+						<colgroup>
+							<col class="hidden-phone" width="6%">
+							<col width="*%">
+							<col width="45%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="hidden-phone" scope="col">환경</th>
+								<th scope="col">태그</th>
+								<th scope="col">태그 설명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="hidden-phone">Web</td>
+								<td>meta name=”subject” content=”meta태그 공부”</td>
+								<td>홈페이지 주제</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="title" content=”meta태그”</td>
+								<td>제목</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="author" content=”eunjeong”</td>
+								<td>글쓴이</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="description" content=”meta태그 정리페이지 입니다.”</td>
+								<td>설명</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="keyword" content=”html, html5, css. css3”</td>
+								<td>키워드</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="generator" content="EditPlus”</td>
+								<td>저작프로그램</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="reply-to" content="janma10101@naver.com”</td>
+								<td>페이지에 관한 문의처 메일 주소 명시</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="content-language" content="kr”</td>
+								<td>페이지에 기술된 언어 명시</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta name="Robots" content="index, follow”</td>
+								<td>index, follow -> 이 문서도 긁어가고, 링크된 문서도 긁어감
+									<br>noindex, follow -> 이 문서도 긁어가지말고, 링크된 문서만 긁어감
+									<br>index, nofollow -> 이 문서는 긁어가고, 링크는 무시
+									<br>noindex, nofollow -> 이 문서도 긁지않고, 링크도 무시
+								</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta charset="UTF-8"</td>
+								<td>페이지의 문자 인코딩을 지정.
+									<br>대표적으로 UTF-8(유니코드를 위한 문자 인코딩 방식 중 하나)를 쓰는게 일반적임.
+									<br>ASCII와 같은 문자 인코딩은 한글을 표현불가.
+								</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta http-equiv="content-type" content=”text/html; charset=문자 인코딩”</td>
+								<td>http-equiv -> 글을 읽기전 먼저 웹브라우저에 정보를 전달하는 역할
+									<br>content-type -> 글의 종류로 문자 인코딩 지정을 위해 사용
+								</td>
+							</tr>						
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta http-equiv="content-style-type" content=”text/css”</td>
+								<td>css사용시 지정</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta http-equiv="pragma" content=”no-cache”</td>
+								<td>캐쉬가 쌓이지 않도록 해줌.
+									<br>항상 홈페이지 내용을 새로 읽어들임. 
+								</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta http-equiv="refresh" content=”4, http://www.naver.com”</td>
+								<td><p>refresh -> 일정 시간이후에 새로고침, 새로고침되기까지 시간을 초 단위로 나타냄.</p>
+									<p>http://www.naver.com -> 해당 사이트로 이동</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone"></td>
+								<td>meta http-equiv="X-UA-Compatible" content=”IE=Edge, chrome=1”</td>
+								<td>
+									호환성 강제 렌더링, ActiveX, 기타 스트립트 등 IE 상위버전까지 지원되지 않아 호환성 문제 발생 시 해결<br>
+									IE=Edge, chrome=1 <br>-> chrome=1을 쓰면 가능한 경우 크롬 프레임 사용<br>
+									IE=Edge -> IE8이상 버전에서 항상 최신 표준 모드로 렌더링<br>
+									IE=5 -> IE5 렌더링 방식 사용<br>
+									IE=7 -> IE 표준모드 렌더링 방식 사용<br>
+									IE=EmulateIE7 -> IE7 표준모드나 퀵스모드로 렌더링<br>
+									IE=8 -> IE8 표준모드로 렌더링<br>
+									IE=EmulateIE8 -> IE8 표준모드나 퀵스모드로 렌더링
+								</td>
+							</tr>
+				
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="sec_box">
+					<div class="cont">
+						<h2>2. MOBILE&amp;RESPONSIVE</h2>
+						<table class="table table-bordered">
+							<caption>대인덱스 목록</caption>
+							<colgroup>
+								<col class="hidden-phone" width="6%">
+								<col width="*%">
+								<col width="45%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="hidden-phone" scope="col">환경</th>
+									<th scope="col">태그</th>
+									<th scope="col">태그 설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="hidden-phone" rowspan="6">Mobile</td>
+									<td rowspan="6">meta name="viewport” content=”width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi”</td>
+									<td>viewport -> 브라우저에서 표시되는 화면영역
+										<br>webkit 브라우저(크롬, 사파리)의 기본 뷰포트는 980px -> device-width를 맞춰줘야함.
+									</td>
+								</tr>
+								<tr>
+									<td>width=device-width -> viewport를 device의 너비만큼 쓰겠다고 선언.</td>
+								</tr>
+								<tr>
+									<td>
+										<p style="margin-left:88px; text-indent:-87px;">initial-scale -> 초기화면배율
+											<br>기본값 1 (1보다 크게 설정된 경우 확대된 페이지로 나옴)
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p style="margin-left:116px; text-indent:-115px;">maximum-scale -> 최대화면비율
+											<br>핀치 줌인 시 최대 몇 배율까지 보여줄지 설정
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p style="margin-left:104px; text-indent:-103px;">user-scalable -> 사용자의 확대보기를 허용 여부
+											<br>0 : 허용하지않음 / 1 : 확대보기 허용함
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td>target-densityDpi=medium-dpi 
+										<br>-> 모바일기기에서 동일한 해상도로 보여지도록함 (안드로이드만적용)
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont">
+						<h2>[Responsive css]</h2>
+						<table class="table table-bordered">
+							<caption>대인덱스 목록</caption>
+							<colgroup>
+								<col width="*%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">Media Query css</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<p>1. CSS내부에 삽입하기</p>
+										<p>@media screen and (min-width:360px) and (max-width:640px){}</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>2. 링크로 연결</p>
+										<p>link red="stylesheet" media="(max-width: 700px)" href="test.css"</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="btn_top">Top</a>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			//tabmenu
+			$('.gnb a').on('click',function(){
+				var currentIdx = $(this).parents('li').index();
+
+				$(this).parents('li').addClass('on').siblings().removeClass('on');
+				$(this).parents('.header').next('.container').find('.sec_box').eq(currentIdx).show().siblings().hide();
+			})
+			
+			//scroll
+			$(window).scroll(function(){
+				$('.btn_top').css('display','block');
+				if($(window).scrollTop()==0){
+					$('.btn_top').css('display','none');
+				}
+			})
+
+			$('.btn_top').on('click',function(){
+				$('body, html').animate({scrollTop:0},300);
+				return false;
+			})
+		})
+	</script>
+</body>
+</html>
