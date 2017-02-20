@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+
+.slider_default {position:relative; border:1px solid #000; box-sizing:border-box;}
+.slider_default .btn_control {position:absolute; top:50%; width:100px; height:30px; margin-top:-15px; font-size:12px; text-align:center; color:#fff; background:#000; border:0; box-sizing:border-box;}
+.slider_default .btn_prev {left:0;}
+.slider_default .btn_next {right:0;}
+.slider_default .slider_container {position:relative; overflow:hidden; width:400px; height:300px; margin:40px auto; border:1px solid #000;}
+.slider_default .slider_container .inner {}
+.slider_default .slider_container .inner:after {display:block; content:""; clear:both;}
+.slider_default .slider_container .slider_list {float:left; width:400px; height:300px; line-height:298px; text-align:center;}
